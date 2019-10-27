@@ -27,8 +27,6 @@ listaKrajow = ["Hiszpania", "Anglia", "Nowa Zelandia", "Niemcy", "USA", "Austral
 listaKrajow += ["Barcelona", "Londyn", "Alla", "Berlin", "Nowy Jork", "AustlialickieMiasto", "AusMiasto", "JaponMiasto", "Praga"]
 
 
-
-
 print(listaKrajow[0] + " " + listaKrajow[9])
 print(listaKrajow[1] + " " + listaKrajow[10])
 print(listaKrajow[2] + " " + listaKrajow[11])
