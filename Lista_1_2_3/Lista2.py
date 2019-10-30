@@ -2,10 +2,17 @@
 # Określniki formatu
 
 print("Jan %s -- uzyto typu string" % "Nowak")
-print("Liczba dni w roku %d -- uzyto liczby calkowitej" % 365)
-print("Pi ma wartosc ~%f -- uzyto zmiennoprzcinkowej liczby" % 3.1415926)
-print("Odleglosc ziemi od słonca: %Ekm --uzyto duzej liczby w notacji wykładniczej" %149600000)
-print("Odleglosc ziemi od słonca: %.02fkm --uzyto duzej liczby w kontrolowanej notacji wykładniczej" %149600000)
+liczba = 365+10
+print("Liczba dni w roku %d -- uzyto liczby calkowitej" % liczba)
+y = 3.1415926 * 1.3
+print("Pi ma wartosc ~%f -- uzyto zmiennoprzcinkowej liczby" % y
+      )
+y = 149600000 / 1000
+print("Odleglosc ziemi od słonca: %Ekm --uzyto duzej liczby w notacji wykładniczej" % y
+      )
+d = 149600000 % 35
+print("Odleglosc ziemi od słonca: %.02fkm --uzyto duzej liczby w kontrolowanej notacji wykładniczej" % d
+      )
 
 
 
@@ -18,7 +25,10 @@ print(zmiennaTypuZnakowego, zmiennaTypuLiczbowego, zmiennaTypuLiczbowegoKonwersj
 
 # zadnie 3
 
-zmiennaDodawana = 2+2
+
+liczba = 10
+zmiennaDodawana = 2
+zmiennaDodawana %= liczba
 print(zmiennaDodawana)
 
 # zadanie 4

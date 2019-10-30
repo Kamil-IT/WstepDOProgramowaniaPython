@@ -46,20 +46,15 @@ else:
 
 # zadanie 4
 
-liczbaA = 1122
-liczbaB = 867
-minimum = 0
+liczbaA = 12
+liczbaB = 4
 
 # Najmniejszy wspolny dzielnik
-if liczbaA % 1 == 0 and liczbaB % 1 == 0:
-    minimum = 1
-    print("Najmniejszy wspólny dzielnik to: " + str(minimum))
+dzielnik = 1
+czyZnaleziony = True
+while czyZnaleziony:
+    dzielnik += 1
+    if liczbaA % dzielnik == 0 and liczbaB % dzielnik == 0:
+        czyZnaleziony = False
 
-# Największy wspólny dzielnik
-while liczbaB == liczbaA:
-    if liczbaB > liczbaA:
-        liczbaB -= liczbaA
-    else:
-        liczbaA -= liczbaB
-
-print("Najwiekszy wspolny dzielnik to: " + str(liczbaB))
+print(dzielnik)
