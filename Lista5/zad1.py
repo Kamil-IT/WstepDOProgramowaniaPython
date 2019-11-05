@@ -2,7 +2,6 @@ import math
 
 
 class LogExp:
-    a = 0.0
 
     def __init__(self, a):
         self.a = a
