@@ -10,12 +10,9 @@ class Student:
         self.grupa = grupa
         self.nrAlbumu = nrAlbumu
 
+    def change_date(self, grupa, rok):
+        self.grupa = grupa
+        self.rok = rok
+
 
 student = Student("Marcin", "Kowalski", 1990, "Nieznana", 254331)
-
-
-
-
-
-
-
