@@ -1,5 +1,10 @@
 import os
 import sys
+import time
+
+from pip._vendor.distlib.compat import raw_input
+
+import Lista7.DiaryCard
 
 path = "pamietnik.txt"
 try:
@@ -11,7 +16,7 @@ except IOError:
 # Dane są oddzielane ";"
 # WARNING NIE wprwadzaj do swojego pamiętnika ; !!!!
 
-pamietnik = {}
+diary = []
 
 if os.path.getsize(path) > 0:
     line = data_file.readline()
@@ -21,13 +26,21 @@ if os.path.getsize(path) > 0:
             text = line[line.find(';')]
         else:
             continue
-        pamietnik[title] = [text]
+
+        diary += [Lista7.DiaryCard]
 
 print("Obecny pamietnik:")
-# for pamietnik in
+# for pamietnik in Nie moge odwołać się do metod
+# for tmp in diary:
+#     print("title: " + tmp.)
+#     print(tmp)
 
 
-title = input("Wprowadz tytul: ")
-text = input("Wprowadz wartosc tekstowa pamietnika: ")
 
-data_file.write("\n" + title + ";" + text + "\n")
+title = raw_input("Wprowadz tytul: ")
+text = raw_input("Wprowadz wartosc tekstowa pamietnika: ")
+
+data_file.write(title + ";" + text + ";" + time.ctime(time.time()) + "\n")
+data_file.write(title + ";" + text + "\n")
+
+
