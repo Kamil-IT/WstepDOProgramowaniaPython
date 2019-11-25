@@ -1,2 +1,2 @@
-Programowanie;Ucze sie jezyka python i doszedlem do wniosku ze brakuje mi srednikow;Mon Nov 25 12:33:43 2019
-Programowanie;Ucze sie jezyka python i doszedlem do wniosku ze brakuje mi srednikow
+Programowanie;Czemu nie ma srednikow w pythonie;Mon Nov 25 14:50:09 2019
+Uczelnia;Mialem dzis kolokwium;Mon Nov 25 14:52:28 2019
