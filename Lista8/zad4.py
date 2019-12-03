@@ -1,4 +1,4 @@
 import re
 
-res = re.match(r'(60*)-.*(70*)-.*(8001)', "600-700-8001")
-print(res.groups())
+response = re.compile('(.*)-(.*)-(.*)').match("600-700-8001")
+print(f"('{response.group(1)}' '{response.group(2)}' '{response.group(3)}')")
