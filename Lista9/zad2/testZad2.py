@@ -13,23 +13,26 @@ class test(unittest.TestCase):
     def testMatrixHaveNumbers(self):
         for row in self.matrix_array:
             for column in row:
-                self.assertIsInstance(column, (int, float))
+                self.assertIsInstance(column, (int, float), "zły typ danych")
 
     def testMatrixIsSquare(self):
         count_shape = self.matrix.shape.count(sqrt(self.matrix.size))
-        self.assertEqual(count_shape, 2)
+        self.assertEqual(count_shape, 2, "Macierz nie jest kwadratowa")
 
-    # Do poprawy
     def testLUMatrixDeterminant(self):
         I, L, U = linalg.lu(self.matrix)
         detI = linalg.det(I)
         detL = linalg.det(L)
         detU = linalg.det(U)
         det_all = linalg.det(self.matrix)
-        self.assertEqual(det_all, detI * detU * detL)
+        self.assertEqual(det_all, detI * detU * detL, "Wyznaczniki sie nie zgadzają")
+
+    def testIsMatrixDeterminantDifferent0(self):
+        det_all = linalg.det(self.matrix)
+        self.assertNotEqual(det_all, 0, "wyznacznik jest równy 0")
 
     def testDeterminant(self):
-        self.assertEqual(numpy.linalg.det(self.matrix_array), -18.000000000000014)
+        self.assertEqual(numpy.linalg.det(self.matrix_array), -18.000000000000014, "Wynik jest źle wyliczony")
 
 
 if __name__ == "__main__":
