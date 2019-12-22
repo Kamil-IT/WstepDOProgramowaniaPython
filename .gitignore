@@ -2,3 +2,4 @@
 ./.idea
 ./Python(IntroToProgramming)/.idea
 venv
+/venv/
