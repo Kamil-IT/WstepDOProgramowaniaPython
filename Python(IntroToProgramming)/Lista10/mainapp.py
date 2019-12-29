@@ -36,9 +36,6 @@ class MainWindow(QMainWindow):
         score = eval(self.ui.textEdit.toPlainText())
         self.ui.textEdit.setText(str(score))
 
-    def on_click(self, number):
-        print('PyQt5 button click')
-
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
