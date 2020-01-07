@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>403</width>
-    <height>330</height>
+    <width>410</width>
+    <height>390</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -281,13 +281,68 @@
      <string>C</string>
     </property>
    </widget>
+   <widget class="QGroupBox" name="GroupBoxColor">
+    <property name="geometry">
+     <rect>
+      <x>9</x>
+      <y>309</y>
+      <width>381</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>GroupBox</string>
+    </property>
+    <widget class="QRadioButton" name="radioButtonRed">
+     <property name="geometry">
+      <rect>
+       <x>150</x>
+       <y>20</y>
+       <width>97</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Red</string>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="radioButtonBlue">
+     <property name="geometry">
+      <rect>
+       <x>300</x>
+       <y>20</y>
+       <width>61</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Blue</string>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="radioButtonBlack">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>61</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Black</string>
+     </property>
+     <property name="checked">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>403</width>
+     <width>410</width>
      <height>26</height>
     </rect>
    </property>
