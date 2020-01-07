@@ -19,7 +19,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(403, 330)
+        MainWindow.resize(410, 390)
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         self.pushButton_minus = QPushButton(self.centralwidget)
@@ -114,10 +114,23 @@ class Ui_MainWindow(object):
         self.pushButton_C.setObjectName(u"pushButton_C")
         self.pushButton_C.setGeometry(QRect(10, 250, 91, 49))
         self.pushButton_C.setFont(font)
+        self.GroupBoxColor = QGroupBox(self.centralwidget)
+        self.GroupBoxColor.setObjectName(u"GroupBoxColor")
+        self.GroupBoxColor.setGeometry(QRect(9, 309, 381, 51))
+        self.radioButtonRed = QRadioButton(self.GroupBoxColor)
+        self.radioButtonRed.setObjectName(u"radioButtonRed")
+        self.radioButtonRed.setGeometry(QRect(150, 20, 97, 20))
+        self.radioButtonBlue = QRadioButton(self.GroupBoxColor)
+        self.radioButtonBlue.setObjectName(u"radioButtonBlue")
+        self.radioButtonBlue.setGeometry(QRect(300, 20, 61, 20))
+        self.radioButtonBlack = QRadioButton(self.GroupBoxColor)
+        self.radioButtonBlack.setObjectName(u"radioButtonBlack")
+        self.radioButtonBlack.setGeometry(QRect(10, 20, 61, 20))
+        self.radioButtonBlack.setChecked(True)
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
-        self.menubar.setGeometry(QRect(0, 0, 403, 26))
+        self.menubar.setGeometry(QRect(0, 0, 410, 26))
         MainWindow.setMenuBar(self.menubar)
 
         self.retranslateUi(MainWindow)
@@ -142,5 +155,9 @@ class Ui_MainWindow(object):
         self.pushButton_9.setText(QCoreApplication.translate("MainWindow", u"9", None))
         self.pushButton_equal.setText(QCoreApplication.translate("MainWindow", u"=", None))
         self.pushButton_C.setText(QCoreApplication.translate("MainWindow", u"C", None))
+        self.GroupBoxColor.setTitle(QCoreApplication.translate("MainWindow", u"GroupBox", None))
+        self.radioButtonRed.setText(QCoreApplication.translate("MainWindow", u"Red", None))
+        self.radioButtonBlue.setText(QCoreApplication.translate("MainWindow", u"Blue", None))
+        self.radioButtonBlack.setText(QCoreApplication.translate("MainWindow", u"Black", None))
     # retranslateUi
 

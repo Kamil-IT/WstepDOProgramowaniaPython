@@ -29,12 +29,25 @@ class MainWindow(QMainWindow):
 
         self.ui.pushButton_equal.clicked.connect(lambda: self.add_counted_score())
 
+        self.ui.radioButtonRed.toggled.connect(lambda: self.change_color())
+        self.ui.radioButtonBlue.toggled.connect(lambda: self.change_color())
+        self.ui.radioButtonBlack.toggled.connect(lambda: self.change_color())
+
     def add_to_main_field(self, number):
         self.ui.textEdit.setText(self.ui.textEdit.toPlainText() + str(number))
 
     def add_counted_score(self):
         score = eval(self.ui.textEdit.toPlainText())
         self.ui.textEdit.setText(str(score))
+
+    def change_color(self):
+        if self.ui.radioButtonRed.isChecked():
+            self.ui.textEdit.setStyleSheet("QTextEdit {color:red}")
+        elif self.ui.radioButtonBlue.isChecked():
+            self.ui.textEdit.setStyleSheet("QTextEdit {color:blue}")
+        elif self.ui.radioButtonBlack.isChecked():
+            self.ui.textEdit.setStyleSheet("QTextEdit {color:black}")
+
 
 
 if __name__ == "__main__":
