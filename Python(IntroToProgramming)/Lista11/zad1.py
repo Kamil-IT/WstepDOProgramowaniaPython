@@ -9,6 +9,6 @@ with dbm.open('cache', 'c') as db:
     db['id_constructor'] = '254331'
 
     # Read value from db
-    print(db.get('hello'))
-    print(db.get('name_constructor'))
-    print(db.get('id_constructor'))
+    print(bytes.decode(db.get('hello')))
+    print(bytes.decode(db.get('name_constructor')))
+    print(bytes.decode(db.get('hello', None)))

@@ -135,6 +135,12 @@ employee3.add_to_db(db)
 employee4 = Employee(4, "Basia", "NieZaSzybka", 2)
 employee4.add_to_db(db)
 
+employee5 = Employee(5, "Marian", "Bialostocki", 1)
+employee5.add_to_db(db)
+
+employee6 = Employee(6, "Adam", "Niewiem", 1)
+employee6.add_to_db(db)
+
 
 show_company(db)
 
