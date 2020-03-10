@@ -14,13 +14,14 @@ def is_recipe_correct(receipt, article_details):
                 break
             elif len(article_details) == article + 1:
                 return False
+    return True
 
 
-def whole_price(receipt, article_details):
+def whole_price(receipt, article_details, client_id):
     price = 0.0
     for col in range(0, len(receipt)):
         for article in range(0, len(article_details)):
-            if receipt[col][1] == article_details[article][0]:
+            if receipt[col][1] == article_details[article][0] and receipt[col][0] == client_id:
                 price += article_details[article][1] * receipt[col][2]
     return price
 
@@ -48,6 +49,4 @@ article_details = np.array(
 print(is_recipe_correct(receipt, article_details))
 
 # ex2
-print(whole_price(receipt, article_details))
-
-# ex3
+print(whole_price(receipt, article_details, 123))
