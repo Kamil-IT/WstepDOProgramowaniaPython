@@ -4,6 +4,8 @@ import pandas
 from matplotlib import gridspec
 import matplotlib as mpl
 
+
+
 file_price_water = pandas.read_csv('ceny_wody_zimnej_za_1m.csv')
 data_price_water = file_price_water[['Kod', 'Nazwa', 'ZimnaWoda']]
 
