@@ -1,6 +1,6 @@
 import time
 import random
-
+from timeit import default_timer as timer
 
 def bubble_sort(array):
     for passum in range(len(array) - 1, 0, -1):
@@ -34,9 +34,9 @@ def sorting_time_bubble(array):
     times = []
     for i in range(10):
         array_to_sort = array.copy()
-        time_start = time.time()
+        time_start = timer()
         bubble_sort(array_to_sort)
-        time_end = time.time()
+        time_end = timer()
         times.append(time_end - time_start)
     return max(times), sum(times) / float(len(times))
 
@@ -45,9 +45,10 @@ def sorting_time_insert(array):
     times = []
     for i in range(10):
         array_to_sort = array.copy()
-        time_start = time.time()
+        time_start = timer()
         insert_sort(array_to_sort)
-        times.append(time.time() - time_start)
+        time_end = timer()
+        times.append(time_end - time_start)
     return max(times), sum(times) / float(len(times))
 
 
@@ -55,9 +56,9 @@ def sorting_time_select(array):
     times = []
     for i in range(10):
         array_to_sort = array.copy()
-        time_start = time.time()
+        time_start = timer()
         select_sort(array_to_sort)
-        time_end = time.time()
+        time_end = timer()
         times.append(time_end - time_start)
     return max(times), sum(times) / float(len(times))
 
