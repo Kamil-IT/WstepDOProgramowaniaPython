@@ -50,16 +50,21 @@ def LCS_pause(text1, text2):
     return max
 
 
-# ex3 a
-print("ex3 a")
-print(LCS_pause("konwalia", "zawalina"))
+# # ex3 a
+# print("ex3 a")
+# print(LCS_pause("konwalia", "zawalina"))
+#
+# # ex3 b
+# print("ex3 b")
+# print(LCS("ApqBCrDsEF", "tABuCvDEwxFyz"))
+#
+# # ex3 d
+# print("ex3 d")
+# print(distance("marka", "ariada"))
+# print(
+#     "Wynosi 4, ponieważ potrzeba co najmniej czterech działań, np.: usunięcia litery m, zamiany k na i oraz dodania d i a.")
 
-# ex3 b
-print("ex3 b")
-print(LCS("ApqBCrDsEF", "tABuCvDEwxFyz"))
+for x in set('pqr'):
+    print(x*2)
 
-# ex3 d
-print("ex3 d")
-print(distance("marka", "ariada"))
-print(
-    "Wynosi 4, ponieważ potrzeba co najmniej czterech działań, np.: usunięcia litery m, zamiany k na i oraz dodania d i a.")
+cmp()
