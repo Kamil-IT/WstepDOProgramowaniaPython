@@ -12,6 +12,10 @@ def generalized_mean(array, row):
     return sum ** (1. / row)
 
 
+def logarithmic_mean(a, b):
+    return (a - b) / (np.log(a) - np.log(b))
+
+
 randomNumbers = []
 for i in range(0, 1000):
     randomNumbers.append(random.randint(1, 1000))
@@ -38,8 +42,7 @@ print("Harmean: " + hmean(randomNumbers).__str__())
 print()
 
 # 5. Logarithmic mean / średnia logarytmiczna
-# TODO:
-print("Logarithmic mean: ")
+print("Logarithmic mean: " + logarithmic_mean(randomNumbers[0], randomNumbers[1]).__str__())
 print()
 
 # 6. Standard deviation / odchylenie standardowe
