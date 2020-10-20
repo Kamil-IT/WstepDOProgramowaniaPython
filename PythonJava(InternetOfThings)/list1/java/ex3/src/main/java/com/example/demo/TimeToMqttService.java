@@ -68,7 +68,7 @@ public class TimeToMqttService {
 
     public void postMessageToTimeServer() {
         try {
-            String time = subscribeMessagesFromMqtt(TOPIC_MAIN, 10000);
+            String time = subscribeMessagesFromMqtt(TOPIC_MAIN, 5000);
             postMessageToTimeServer(time, Arrays.asList("nr_indeksu1", "nr_indeksu2"));
         } catch (MqttException e) {
             e.printStackTrace();

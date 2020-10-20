@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Configuration;
 public class MqttClientConfig {
 
     private static final String MQTT_PUBLISHER_ID = "spring-server";
-    private static final String MQTT_SERVER_ADDRESS = "tcp://test.mosquitto.org:1883";
+    private static final String MQTT_SERVER_ADDRESS = "tcp://192.168.1.13:1883";
 
     @Bean
     public IMqttClient iMqttClient() throws MqttException {
