@@ -78,7 +78,7 @@ def get_data_from_csv_file(file_name):
 
 
 def send_http_message(url, json_message):
-    requests.post(url, json=json_message)
+    requests.post(url, data=json_message, headers={'content-type': 'application/json'})
     print("sent: http url:" + url + " message:" + json_message)
 
 
