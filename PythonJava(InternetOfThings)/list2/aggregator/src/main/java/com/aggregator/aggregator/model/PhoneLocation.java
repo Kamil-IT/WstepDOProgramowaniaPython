@@ -16,4 +16,12 @@ public class PhoneLocation extends DateDelivery {
     private Double latitude;
     @JsonProperty("Longitude")
     private Double longitude;
+
+    @Override
+    public String toString() {
+        return "PhoneLocation{" +
+                "latitude=" + latitude +
+                ", longitude=" + longitude +
+                '}';
+    }
 }

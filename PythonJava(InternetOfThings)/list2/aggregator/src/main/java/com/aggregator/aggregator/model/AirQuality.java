@@ -14,4 +14,11 @@ public class AirQuality extends DateDelivery {
 
     @JsonProperty("Nitrogen Dioxide Micrograms Per Cubic Metre")
     private double NitrogenDioxideMicrogramsPerCubicMetre;
+
+    @Override
+    public String toString() {
+        return "AirQuality{" +
+                "NitrogenDioxideMicrogramsPerCubicMetre=" + NitrogenDioxideMicrogramsPerCubicMetre +
+                '}';
+    }
 }

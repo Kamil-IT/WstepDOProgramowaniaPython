@@ -15,4 +15,12 @@ public class Temperature extends DateDelivery {
     private Double temp;
     @JsonProperty("outside/inside")
     private String outside_inside;
+
+    @Override
+    public String toString() {
+        return "Temperature{" +
+                "temp=" + temp +
+                ", outside_inside='" + outside_inside + '\'' +
+                '}';
+    }
 }

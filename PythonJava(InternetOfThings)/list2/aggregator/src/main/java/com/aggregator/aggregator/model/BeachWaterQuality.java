@@ -14,14 +14,11 @@ public class BeachWaterQuality extends DateDelivery {
 
     @JsonProperty("Water Temperature")
     private double temp;
-//
-//    @JsonProperty("Water Temperature")
-//    public double getTemp() {
-//        return temp;
-//    }
-//
-//    @JsonProperty("Water Temperature")
-//    public void setTemp(double temp) {
-//        this.temp = temp;
-//    }
+
+    @Override
+    public String toString() {
+        return "BeachWaterQuality{" +
+                "temp=" + temp +
+                '}';
+    }
 }

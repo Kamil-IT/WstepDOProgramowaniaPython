@@ -16,4 +16,13 @@ public class Humidity extends DateDelivery {
     private Float time;
     @JsonProperty("Humidity")
     private Float humidity;
+
+    @Override
+    public String toString() {
+        return "Humidity{" +
+                "id=" + id +
+                ", time=" + time +
+                ", humidity=" + humidity +
+                '}';
+    }
 }

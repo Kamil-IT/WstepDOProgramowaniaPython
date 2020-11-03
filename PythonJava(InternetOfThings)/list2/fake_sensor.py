@@ -84,7 +84,7 @@ def send_http_message(url, json_message):
 
 def publish_mqtt_message(client, topic, json_message):
     client.publish(topic, json_message)
-    print("sent: mqtt url:" + topic + " message:" + json_message)
+    print("sent: mqtt topic:" + topic + " message:" + json_message)
 
 
 if __name__ == '__main__':
