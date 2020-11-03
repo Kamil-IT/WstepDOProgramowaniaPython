@@ -1,5 +1,5 @@
 ./venv
-./.idea
-/Python(IntroToProgramming)/.idea
+*./.idea/
 venv
 /venv/
+*.demo.iml
