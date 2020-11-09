@@ -1,6 +1,7 @@
 import numpy as np
 from numpy import genfromtxt
 from scipy.stats import ranksums, f_oneway, brunnermunzel, levene, shapiro, kruskal, bartlett, mannwhitneyu, t, nct
+from statsmodels.stats._lilliefors import lilliefors
 
 
 def import_list_from_data_cvs(csv_data, column):
@@ -70,4 +71,13 @@ print("csv 2: " + str(mannwhitneyu(col_1_csv2, col_2_csv2)))
 print("t-Student")
 # print("csv 1: " + f"T-StudentResult(statistic={t.pdf(1-len(col_1_csv1), col_1_csv1)}, pvalue=")
 # print("csv 2: " + str(mannwhitneyu(col_1_csv2, col_2_csv2)))
-# Lilliefors TODO:
+# Lilliefors
+print("Lilliefors")
+stat, p_val = lilliefors(col_1_csv1)
+print("csv 1, col 1: " + f"LillieforsResult(statistic={stat}, pvalue={p_val})")
+stat, p_val = lilliefors(col_2_csv1)
+print("csv 1, col 2: " + f"LillieforsResult(statistic={stat}, pvalue={p_val})")
+stat, p_val = lilliefors(col_1_csv2)
+print("csv 2, col 1: " + f"LillieforsResult(statistic={stat}, pvalue={p_val})")
+stat, p_val = lilliefors(col_2_csv2)
+print("csv 2, col 2: " + f"LillieforsResult(statistic={stat}, pvalue={p_val})")
