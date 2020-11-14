@@ -29,7 +29,6 @@ def design_matrix(x_train, M):
     :param M: stopien wielomianu 0,1,2,...
     :return: funkcja wylicza Design Matrix Nx(M+1) dla wielomianu rzedu M
     """
-
     des_mat = np.zeros((len(x_train), M + 1))
     # x^0 x^1 x^2 x^3 ... x^M+1
     for row in range(len(x_train)):
@@ -48,8 +47,8 @@ def least_squares(x_train, y_train, M):
     :return: funkcja zwraca krotke (w,err), gdzie w sa parametrami dopasowanego wielomianu, a err blad sredniokwadratowy
     dopasowania
     """
-    matrix = design_matrix(x_train, M)
-    ls = inv(matrix.transpose() @ matrix) @ matrix.transpose() @ y_train
+    matrix_des = design_matrix(x_train, M)
+    ls = inv(matrix_des.transpose() @ matrix_des) @ matrix_des.transpose() @ y_train
     ms_err = mean_squared_error(x_train, y_train, ls)
     return ls, ms_err
 
