@@ -21,6 +21,10 @@ col_1_csv1 = import_list_from_data_cvs(data_csv1, 0)
 col_2_csv1 = import_list_from_data_cvs(data_csv1, 1)
 col_1_csv2 = import_list_from_data_cvs(data_csv2, 0)
 col_2_csv2 = import_list_from_data_cvs(data_csv2, 1)
+col_1_csv1.pop(0)
+col_2_csv1.pop(0)
+col_1_csv2.pop(0)
+col_2_csv2.pop(0)
 
 # Parametryczne -> rozkład normalny
 # nie Parametryczne -> nie rozkład normalny
