@@ -1,6 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
-from random import random
+from random import uniform
 
 x_inside = []
 y_inside = []
@@ -38,8 +38,8 @@ def is_in_fig(x, y):
 
 
 for _ in range(total_points):
-    x = random() * 6
-    y = random() * 7
+    x = uniform(0, 6)
+    y = uniform(0, 7)
     if is_in_fig(x, y):
         points_inside += 1
         x_inside.append(x)
