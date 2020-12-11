@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>Aggregator sensors</title>
+</head>
+<body>
+
+<h2>App 1 - beach water quality sensor</h2>
+<h3 th:text="'Amount measurement: ' + ${water_quality_count} + ', Avg value:' + ${water_quality_avg} + ', is working:' + ${water_quality_non_status}"></h3>
+
+<h2>App 2 - phone location sensor</h2>
+<h3 th:text="'Amount measurement: ' + ${phone_location_count} + ', Avg value latitude:' + ${phone_location_avg_lat} + ', Avg value longitude:' + ${phone_location_avg_long}"></h3>
+
+<h2>App 3 - temperature sensor</h2>
+<h3 th:text="'Amount measurement: ' + ${temperature_count} + ', Avg value inside:' + ${temperature_avg_inside} + ', Avg value outside:' + ${temperature_avg_outside}"></h3>
+<form action="http://localhost:8080/updateactuator" method="post">
+    <label for="actuator">Turn On/Off actuator</label>
+    <input type="checkbox" id="actuator" name="actuator" />
+
+    <input type="submit" value="Submit">
+</form>
+
+<h2>App 4 - air quality sensor</h2>
+<h3 th:text="'Amount measurement: ' + ${air_quality_count} + ', Avg value:' + ${air_quality_avg}"></h3>
+
+<h2>App 5 - humidity sensor</h2>
+<h3 th:text="'Amount measurement: ' + ${humidity_count} + ', Avg value:' + ${humidity_avg}"></h3>
+
+
+<form action="http://localhost:8080/update" method="post">
+    <label for="number">App number 1-5</label>
+    <input type="number" id="number" name="app" />
+
+    <label for="protocol">Protocol http/mqtt</label>
+    <input type="text" id="protocol" name="protocol" />
+
+    <label for="frequency">Frequency in sec</label>
+    <input type="text" id="frequency" name="frequency" />
+
+    <label for="status">Status on/off</label>
+    <input type="text" id="status" name="status" />
+
+    <input type="submit" value="Submit">
+</form>
+
+</body>
+</html>
