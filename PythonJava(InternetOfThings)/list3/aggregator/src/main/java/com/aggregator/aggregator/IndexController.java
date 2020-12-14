@@ -5,7 +5,6 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import javax.websocket.server.PathParam;
@@ -30,7 +29,6 @@ public class IndexController {
                            SensorsService<Temperature> temperatureSensorsService,
                            SensorsService<AirQuality> airQualitySensorsService,
                            SensorConfigService sensorConfigService) {
-        this.sensorTimeToShowHour = sensorTimeToShowHour;
         this.beachWaterQualitySensorsService = beachWaterQualitySensorsService;
         this.humiditySensorsService = humiditySensorsService;
         this.phoneLocationSensorsService = phoneLocationSensorsService;
@@ -53,7 +51,7 @@ public class IndexController {
         Configuration app1Config = sensorConfigService.getApp1Config();
         model.addAttribute("water_quality_count", String.valueOf(sizeWater));
         model.addAttribute("water_quality_avg", String.valueOf(avgWater.orElse(0)));
-        model.addAttribute("water_quality_non_status", app1Config.getStatus());
+        model.addAttribute("water_quality_status", app1Config.getStatus());
         model.addAttribute("water_quality_protocol", app1Config.getProtocol());
 
         int sizeLocation = phoneLocationSensorsService.getEntitiesAfter(time).size();
@@ -63,24 +61,35 @@ public class IndexController {
         model.addAttribute("phone_location_count", String.valueOf(sizeLocation));
         model.addAttribute("phone_location_avg_lat", String.valueOf(avgLat.orElse(0)));
         model.addAttribute("phone_location_avg_long", String.valueOf(avgLong.orElse(0)));
+        model.addAttribute("phone_location_status", app2Config.getStatus());
+        model.addAttribute("phone_location_protocol", app2Config.getProtocol());
 
 
         int sizeTem = temperatureSensorsService.getEntitiesAfter(time).size();
         OptionalDouble avgTemInside = temperatureSensorsService.getEntitiesAfter(time).stream().filter(e -> e.getOutside_inside().equals("inside")).mapToDouble(Temperature::getTemp).average();
         OptionalDouble avgTemOutside = temperatureSensorsService.getEntitiesAfter(time).stream().filter(e -> e.getOutside_inside().equals("outside")).mapToDouble(Temperature::getTemp).average();
+        Configuration app3Config = sensorConfigService.getApp3Config();
         model.addAttribute("temperature_count", sizeTem);
         model.addAttribute("temperature_avg_inside", String.valueOf(avgTemInside.orElse(0)));
         model.addAttribute("temperature_avg_outside", String.valueOf(avgTemOutside.orElse(0)));
+        model.addAttribute("temperature_status", app3Config.getStatus());
+        model.addAttribute("temperature_protocol", app3Config.getProtocol());
 
         int sizeAir = airQualitySensorsService.getEntitiesAfter(time).size();
         OptionalDouble avgAir = airQualitySensorsService.getEntitiesAfter(time).stream().mapToDouble(AirQuality::getNitrogenDioxideMicrogramsPerCubicMetre).average();
+        Configuration app4Config = sensorConfigService.getApp4Config();
         model.addAttribute("air_quality_count", String.valueOf(sizeAir));
         model.addAttribute("air_quality_avg", String.valueOf(avgAir.orElse(0)));
+        model.addAttribute("air_quality_status", app4Config.getStatus());
+        model.addAttribute("air_quality_protocol", app4Config.getProtocol());
 
         int sizeHum = humiditySensorsService.getEntitiesAfter(time).size();
         OptionalDouble avgHum = humiditySensorsService.getEntitiesAfter(time).stream().mapToDouble(Humidity::getHumidity).average();
+        Configuration app5Config = sensorConfigService.getApp5Config();
         model.addAttribute("humidity_count", String.valueOf(sizeHum));
         model.addAttribute("humidity_avg", String.valueOf(avgHum.orElse(0)));
+        model.addAttribute("humidity_status", app5Config.getStatus());
+        model.addAttribute("humidity_protocol", app5Config.getProtocol());
 
         return "/index";
     }
