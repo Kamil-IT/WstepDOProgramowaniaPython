@@ -20,20 +20,12 @@ def hamming_distance(X, X_train):
     zbioru zwrocone zostana w postaci macierzy
     :return: macierz odleglosci pomiedzy obiektami z X i X_train N1xN2
     """
-    x = X.toarray()
-    x_train = X_train.toarray()
-    xint = x.astype(int)
+    x_array = X.toarray()
+    x_train_array = X_train.toarray()
+    x_inv = np.invert(x_array).astype(int)
+    x_train_inv = np.invert(x_train_array).astype(int)
 
-    xreverse = np.zeros(x.shape)
-    for i in range(x.shape[0]):
-        xreverse[i] = [not b for b in x[i]]
-
-    x_trainint = x_train.astype(int)
-    x_trainreverse = np.zeros(x_trainint.shape)
-    for i in range(x_trainint.shape[0]):
-        x_trainreverse[i] = [not b for b in x_trainint[i]]
-
-    return xreverse @ x_trainint.transpose() + xint @ x_trainreverse.transpose()
+    return x_inv @ x_train_array.transpose() + x_array @ x_train_inv.transpose()
 
 
 def sort_train_labels_knn(Dist, y):
@@ -132,7 +124,15 @@ def estimate_p_x_y_nb(Xtrain, ytrain, a, b):
     :return: funkcja wyznacza rozklad prawdopodobienstwa p(x|y) zakladajac, ze x przyjmuje wartosci binarne i ze elementy
     x sa niezalezne od siebie. Funkcja zwraca macierz p_x_y o wymiarach MxD.
     """
-    pass
+    Xtrain_array = Xtrain.toarray()
+    M = len(np.unique(ytrain))
+    D = Xtrain_array.shape[1]
+    sum_up = np.zeros((M, D))
+    sum_down = np.zeros((M, D))
+    for i in range(ytrain.shape[0]):
+        sum_down[ytrain[i]] += 1
+        sum_up[ytrain[i]] += Xtrain_array[i]
+    return (sum_up + a - 1) / (sum_down + a + b - 2)
 
 
 def p_y_x_nb(p_y, p_x_1_y, X):
@@ -143,7 +143,21 @@ def p_y_x_nb(p_y, p_x_1_y, X):
     :return: funkcja wyznacza rozklad prawdopodobienstwa p(y|x) dla kazdej z klas z wykorzystaniem klasyfikatora Naiwnego
     Bayesa. Funkcja zwraca macierz p_y_x o wymiarach NxM.
     """
-    pass
+    X_array = X.toarray()
+    M = p_y.shape[0]
+    N = X_array.shape[0]
+    result = np.zeros((N, M))
+
+    for i in range(N):
+        Xarray_i = X_array[i]
+        Xarray_i_rev = 1 - Xarray_i
+        for j in range(M):
+            up = (np.power(p_x_1_y[j], Xarray_i) * np.power(1 - p_x_1_y[j], Xarray_i_rev)).prod() * p_y[j]
+            down = 0
+            for k_prim in range(M):
+                down += (np.power(p_x_1_y[k_prim], Xarray_i) * np.power(1 - p_x_1_y[k_prim], Xarray_i_rev)).prod() * p_y[k_prim]
+            result[i][j] = up / down
+    return result
 
 
 def model_selection_nb(Xtrain, Xval, ytrain, yval, a_values, b_values):
@@ -159,4 +173,18 @@ def model_selection_nb(Xtrain, Xval, ytrain, yval, a_values, b_values):
     osiagniety blad, best_a - a dla ktorego blad byl najnizszy, best_b - b dla ktorego blad byl najnizszy,
     errors - macierz wartosci bledow dla wszystkich par (a,b)
     """
-    pass
+    estimate_a_priori = estimate_a_priori_nb(ytrain)
+    errors = np.zeros((a_values.shape[0], b_values.shape[0]))
+    error_best = 100000
+    best_a = 0
+    best_b = 0
+    for i in range(a_values.shape[0]):
+        for j in range(b_values.shape[0]):
+            p_x_y_es = estimate_p_x_y_nb(Xtrain, ytrain, a_values[i], b_values[j])
+            p_x_y = p_y_x_nb(estimate_a_priori, p_x_y_es, Xval)
+            errors[i][j] = classification_error(p_x_y, yval)
+            if error_best > errors[i][j]:
+                error_best = errors[i][j]
+                best_a = a_values[i]
+                best_b = b_values[j]
+    return error_best, best_a, best_b, errors
