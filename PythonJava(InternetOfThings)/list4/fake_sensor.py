@@ -21,7 +21,7 @@ configuration_sensor = {
     "protocol": "mqtt",
 
     # Config http message system
-    "http-url-send-request": "http://localhost:8000/dane1",  # TODO: Change it in another sensor
+    "http-url-send-request": "http://localhost:8000/dane1",
 
     # Port for external properties
     "external-properties-Port": "5001",
