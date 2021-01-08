@@ -15,7 +15,7 @@ class Window:
         return {
             "name": str(self.name),
             "type": str(self.type),
-            "petitioner": str(self.busy),
+            "busy": str(self.busy),
         }
 
 

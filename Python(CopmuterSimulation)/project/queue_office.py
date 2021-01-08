@@ -12,13 +12,16 @@ class Petitioner:
 def go_to_window(petitioner):
     post = requests.post("http://127.0.0.1:5000/petitioner/add/" + str(petitioner.case))
     if str(post.status_code) == str(404):
-        queue.put(petitioner)
+        queue_not_match.put(petitioner)
 
 
 def add_petitioner_to_queue():
     while not queue.empty():
         # TODO: add que to list
-        petitioner = queue.get()
+        if queue_not_match.empty():
+            petitioner = queue.get()
+        else:
+            petitioner = queue_not_match.get()
         go_to_window(petitioner)
         print("Queue size: " + str(queue.qsize()))
 
@@ -49,6 +52,7 @@ if __name__ == '__main__':
     case_2 = 2  # C, D
 
     queue = multiprocessing.Queue(maxsize=800)
+    queue_not_match = multiprocessing.Queue()
     for i in range(random.randint(100, 900)):
         try:
             queue.put(Petitioner(random.randint(1, 2)))
