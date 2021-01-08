@@ -17,7 +17,6 @@ def go_to_window(petitioner):
 
 def add_petitioner_to_queue():
     while not queue.empty():
-        # TODO: add que to list
         if queue_not_match.empty():
             petitioner = queue.get()
         else:
