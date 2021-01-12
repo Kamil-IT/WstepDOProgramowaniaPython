@@ -12,8 +12,11 @@ import java.util.Date;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class DateDelivery {
+public class BaseEntity {
 
     @JsonProperty("date_delivery")
     private Date date;
+
+    @JsonProperty("Actuator")
+    private String actuator;
 }

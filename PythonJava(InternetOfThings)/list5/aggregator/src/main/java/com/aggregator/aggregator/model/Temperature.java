@@ -10,7 +10,7 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Temperature extends DateDelivery {
+public class Temperature extends BaseEntity {
 
     private Double temp;
     @JsonProperty("outside/inside")

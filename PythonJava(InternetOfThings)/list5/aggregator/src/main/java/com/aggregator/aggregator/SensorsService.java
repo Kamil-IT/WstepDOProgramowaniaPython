@@ -7,7 +7,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class SensorsService<Entity extends DateDelivery> {
+public class SensorsService<Entity extends BaseEntity> {
 
     private List<Entity> entities = new ArrayList<>();
 

@@ -10,7 +10,7 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class PhoneLocation extends DateDelivery {
+public class PhoneLocation extends BaseEntity {
 
     @JsonProperty("Latitude")
     private Double latitude;

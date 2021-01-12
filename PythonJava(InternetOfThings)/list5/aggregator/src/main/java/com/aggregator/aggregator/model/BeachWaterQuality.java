@@ -10,7 +10,7 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class BeachWaterQuality extends DateDelivery {
+public class BeachWaterQuality extends BaseEntity {
 
     @JsonProperty("Water Temperature")
     private double temp;

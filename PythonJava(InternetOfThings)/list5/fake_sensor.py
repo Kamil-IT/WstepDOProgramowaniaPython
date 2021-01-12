@@ -105,13 +105,15 @@ def main(config_location):
 
 def get_boost_val(row):
     try:
+        row["Actuator"] = requests.get("http://127.0.0.1:6001/status").content.decode("utf-8").replace("\"", "")
         if configuration_sensor["topic"] == "beach_water_quality":
-            boost = json.loads(requests.get("http://127.0.0.1:6001/val").json())["val"]
+            boost = requests.get("http://127.0.0.1:6001/val").json()["val"]
             row["Water Temperature"] = float(row["Water Temperature"]) + boost
         elif configuration_sensor["topic"] == "phone_location":
-            boost = json.loads(requests.get("http://127.0.0.1:6002/val").json())["val"]
+            boost = requests.get("http://127.0.0.1:6002/val").json()["val"]
             row["Latitude"] = float(row["Latitude"]) + boost
     except:
+        row["Actuator"] = "off"
         print("actuator is off")
     return row
 
@@ -187,9 +189,6 @@ def publish_mqtt_message(client, topic, json_message):
     client.publish(topic, json_message)
     print("sent: mqtt topic:" + topic + " message:" + json_message)
 
-def on_mesage(message):
-    mesg_to_client = do_something_with_message(message)
-    send_to_client(mesg_to_client)
 
 if __name__ == '__main__':
     main()

@@ -10,7 +10,7 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Humidity extends DateDelivery {
+public class Humidity extends BaseEntity {
 
     private Float id;
     private Float time;

@@ -10,7 +10,7 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class AirQuality extends DateDelivery {
+public class AirQuality extends BaseEntity {
 
     @JsonProperty("Nitrogen Dioxide Micrograms Per Cubic Metre")
     private double NitrogenDioxideMicrogramsPerCubicMetre;
