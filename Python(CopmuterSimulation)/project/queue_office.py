@@ -1,5 +1,6 @@
 import multiprocessing
 import random
+import time
 
 import requests
 
@@ -16,6 +17,7 @@ def go_to_window(petitioner):
 
 
 def add_petitioner_to_queue():
+    time_start = time.time()
     while not queue.empty():
         if queue_not_match.empty():
             petitioner = queue.get()
@@ -23,6 +25,8 @@ def add_petitioner_to_queue():
             petitioner = queue_not_match.get()
         go_to_window(petitioner)
         print("Queue size: " + str(queue.qsize()))
+    time_end = time.time()
+    print(time_end - time_start)
 
 
 def is_any_window_busy():
@@ -52,7 +56,8 @@ if __name__ == '__main__':
 
     queue = multiprocessing.Queue(maxsize=800)
     queue_not_match = multiprocessing.Queue()
-    for i in range(random.randint(100, 900)):
+
+    for i in range(800):
         try:
             queue.put(Petitioner(random.randint(1, 2)))
         except Exception:
