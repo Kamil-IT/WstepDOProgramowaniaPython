@@ -1,5 +1,6 @@
 package com.aggregator.aggregator;
 
+import com.aggregator.aggregator.converter.DataConverter;
 import com.aggregator.aggregator.model.BeachWaterQuality;
 import com.aggregator.aggregator.model.PhoneLocation;
 import com.google.gson.Gson;
@@ -7,14 +8,16 @@ import lombok.AllArgsConstructor;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
-import javax.websocket.server.PathParam;
-import java.awt.*;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 @AllArgsConstructor
 @Controller
@@ -48,20 +51,8 @@ public class HistoryController {
             @RequestParam("timeend") String timeEnd,
             @RequestParam(value = "graphic", required = false) boolean graphic
     ) {
-        Date start = new Date(
-                Integer.parseInt(dateStart.substring(0, 4)) - 1900,
-                Integer.parseInt(dateStart.substring(5, 7)) - 1,
-                Integer.parseInt(dateStart.substring(8, 10)),
-                Integer.parseInt(timeStart.substring(0, 2)) - 1,
-                Integer.parseInt(timeStart.substring(3, 5))
-        );
-        Date end = new Date(
-                Integer.parseInt(dateEnd.substring(0, 4)) - 1900,
-                Integer.parseInt(dateEnd.substring(5, 7)) - 1,
-                Integer.parseInt(dateEnd.substring(8, 10)),
-                Integer.parseInt(timeEnd.substring(0, 2)) - 1,
-                Integer.parseInt(timeEnd.substring(3, 5))
-        );
+        Date start = DataConverter.getDataFromString(dateStart, timeStart);
+        Date end = DataConverter.getDataFromString(dateEnd, timeEnd);
         String json = null;
         if (!graphic) {
             Gson gson = new Gson();
