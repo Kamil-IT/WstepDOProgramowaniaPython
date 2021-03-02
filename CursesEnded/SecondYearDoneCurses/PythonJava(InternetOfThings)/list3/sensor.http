@@ -1,0 +1,8 @@
+POST http://localhost:5001/config
+Content-Type: application/json
+
+{
+  "status": "off"
+}
+
+###

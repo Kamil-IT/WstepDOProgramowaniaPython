@@ -1,0 +1,112 @@
+ID,Node Sensor Number,Name,Category,Notes,Latitude,Longitude
+108,70,"UChicago, South Chiller",,,41.78513,-87.59015
+107,0A9,"UChicago, Shapiro Hall",,,41.78974,-87.58713
+111,07A,"UChicago, Oriental Museum",,,41.78898,-87.598
+110,93,"UChicago, Law",,,41.79544,-87.59962
+103,06E,"UChicago, Logan Center",Array of Things (?),,41.78566,-87.6039
+109,74,"UChicago, Smart Museum",,,41.79328,-87.60012
+105,890,"UChicago, Regenstein",Array of Things (?),,41.79221,-87.59957
+55,73,"Martin Luther King Dr. & Garfield Blvd., Chicago, IL",Vision Zero - Other High Crash Locations,,41.79449,-87.61597
+53,18,"Stony Island Ave. & 63rd St., Chicago, IL",Vision Zero - Other High Crash Locations,,41.78062,-87.58646
+57,56,"Long Ave. & Fullterton Ave., Chicago, IL",Vision Zero - Other High Crash Locations/COMPASS Study,,41.92404,-87.76107
+76,67,"Ashland Ave. & 47th, Chicago, IL",COMPASS Study,,41.8086,-87.66497
+47,52,"Ashland & 63rd St., Chicago, IL",Vision Zero - Pedestrian High Crash Intersection,,41.77946,-87.66422
+21,O4F,"Ashland Ave  & 18th St, Chicago, IL",Urban Air Quality and Health Education,,41.85778,-87.66833
+65,81,"Wallace St. & Pershing Rd., Chicago, IL",COMPASS Study,,41.82352,-87.64106
+17,O5A,"Fort Dearborn Dr  & 31st St, Chicago, IL",Urban Impact on Climate & Weather,,41.83866,-87.60801
+82,91,"Halsted St. & Division St., Chicago, IL",North Branch Framework Project,,41.90364,-87.64809
+8,O41,"Western Ave  & Madison St, Chicago, IL",Urban Impact on Climate & Weather,,41.88124,-87.68629
+45,7E,"Cicero Ave. & Madison St., Chicago, IL",Vision Zero - Pedestrian High Crash Intersection,,41.8805,-87.74528
+1,0A0,"Michigan Av & Randolph St, Chicago, IL",Urban Impact on Climate & Weather,,41.88453,-87.62458
+12,98,"LSD/Marine Dr & Irving Park Rd, Chicago, IL",Urban Impact on Climate & Weather,,41.9547,-87.64423
+30,,"State St  & Wacker Dr, Chicago, IL",Urban Vehicle and Pedestrian Flow,"riverfront ideally, for pedestrian flow and to compare riverfront to street level",41.88702,-87.62779
+75,83,"Cottage Grove Ave. & 95th St., Chicago, IL",COMPASS Study,,41.72204,-87.60448
+83,6A,"Clybourn Ave. & North Ave., Chicago, IL",North Branch Framework Project,,41.9109,-87.6495
+95,82,"Pulaski Rd. & Addison St., Chicago, IL",Community Suggestion,,41.94637,-87.7274
+94,02D,"Damen Ave. & Wilson Ave., Chicago, IL",Community Suggestion,,41.9651,-87.67908
+102,08B,"UChicago, Levi Hall",Array of Things (?),,41.78958,-87.60093
+70,88,"Clark St. & Wilson Ave., Chicago, IL",Studio Gang/BET Study,,41.96527,-87.66673
+33,09B,"State St  & Monroe St (SWX), Chicago, IL",Urban Vehicle and Pedestrian Flow,single node,41.88062,-87.62777
+97,87,"Cottage Grove Ave. & 87th St., Chicago, IL",Northwestern-CNT (Chatham Project),,41.73665,-87.60482
+79,62,"Ashland Ave. & Roosevelt Rd., Chicago, IL",BRT,,41.86686,-87.66638
+19,,"South Shore Drive  & 71st St, Chicago, IL",Urban Impact on Climate & Weather,,41.76614,-87.56647
+104,06D,"UChicago, Hutchinson Commons",Array of Things (?),,41.79127,-87.59819
+42,07C,"606 Path  & Miwaukee Ave, Chicago, IL",,,41.91409,-87.68302
+85,79,"Ashland Ave. & Elston, Chicago, IL",North Branch Framework Project,,41.92428,-87.66811
+28,,"Damen Ave  & Stevenson Expressway, Chicago, IL",Urban Air Quality and Health Education,,41.83722,-87.67546
+81,0A5,"Ashland Ave. & Washington, Chicago, IL",BRT,,41.88533,-87.66696
+89,1F,"State St. & 87th, Chicago, IL",Public Health Air Quality Bloomberg Project,,41.7363,-87.62416
+60,07F,"Damen Ave. & Polk St., Chicago, IL",Vision Zero - Other Crash Community Areas/CDOT Projects,,41.87148,-87.67638
+99,37,"Martin Luther King Dr. & 83rd St., Chicago, IL",Northwestern-CNT (Chatham Project),,41.74381,-87.61475
+48,51,"Cottage Grove Ave. & 79th St., Chicago, IL",Vision Zero - Pedestrian High Crash Intersection,,41.75129,-87.60522
+77,09A,"Cottage Grove Ave. & 115th St., Chicago, IL",Pullman National Monument,,41.68544,-87.61108
+86,99,"Torrence & Brainard, Chicago, IL",Public Health Air Quality Bloomberg Project,,41.65849,-87.55911
+61,8E,"Cottage Grove Ave. & 111th St., Chicago, IL",Vision Zero - Other Crash Community Areas/CDOT Projects/Pullman National Monument,,41.69277,-87.60986
+7,32,"Wood St  & Warren Blvd, Chicago, IL",Urban Impact on Climate & Weather,William H. Brown Elementary School; United Center,41.88239,-87.67167
+64,0A3,"Long Ave. & Lawrence Ave., Chicago, IL",COMPASS Study,,41.96767,-87.76261
+98,02C,"Martin Luther King Dr. & 87th St., Chicago, IL",Northwestern-CNT (Chatham Project),,41.7365,-87.61453
+26,01D,"Damen Ave  & Cermak Rd, Chicago, IL",Urban Air Quality and Health Education,Single node with PM,41.85249,-87.67605
+11,O2F,"Sheridan Rd  & Granville Ave, Chicago, IL",Urban Impact on Climate & Weather,,41.99462,-87.65557
+67,77,"Martin Luther King Dr. & 35th St., Chicago, IL",COMPASS Study,,41.8311,-87.61697
+41,04D,"Leavitt St  & Milwaukee Ave, Chicago, IL",Urban Placemaking,,41.91409,-87.68302
+14,94,"Ohio St  & Grand Ave, Chicago, IL",Urban Impact on Climate & Weather,,41.892,-87.61164
+3,,"Clark St  & Randolph St, Chicago, IL",Urban Impact on Climate & Weather,,41.88443,-87.63101
+4,0A6,"Wells St & Washington Blvd, Chicago, IL",Urban Vehicle and Pedestrian Flow,,41.88323,-87.63607
+72,92,"Kedzie Ave. & 51st St., Chicago, IL",COMPASS Study,,41.80082,-87.70377
+37,O39,"Campbell Ave & Addison St, Chicago, IL",Urban Air Quality and Health Education,,41.94672,-87.69287
+31,0AA,"Dearborn St  & Lake St, Chicago, IL",Urban Vehicle and Pedestrian Flow,,41.88575,-87.6317
+40,O34,"Milwaukee Ave  & Wabansia Ave, Chicago, IL",Urban Placemaking,,41.91235,-87.68214
+5,0A7,"Upper Wacker Dr  & Randolph St, Chicago, IL",Urban Impact on Climate & Weather,,41.88442,-87.63675
+68,10,"Homan Ave. & Roosevelt Rd., Chicago, IL",COMPASS Study,,41.86635,-87.71054
+73,97,"Pulaski Rd. & 71st St., Chicago, IL",COMPASS Study,,41.7641,-87.72236
+62,,"California Ave. & Devon Ave., Chicago, IL",COMPASS Study,,41.99756,-87.69964
+74,0A1,"Halsted St. & 99th St., Chicago, IL",COMPASS Study,,41.71421,-87.643
+23,04C,"Western Ave  & 25th St, Chicago, IL",Urban Air Quality and Health Education,,41.84651,-87.68563
+39,75,"Milwaukee Ave & Wood St, Chicago, IL",Urban Placemaking,,41.90722,-87.67469
+56,89,"Chicago Ave. & Noble St., Chicago, IL",Vision Zero - Other High Crash Locations,,41.89615,-87.6624
+13,00A,"Lake Shore Drive  & Fullerton Ave, Chicago, IL",Urban Impact on Climate & Weather,,41.92626,-87.63076
+24,O28,"Western Blvd  & 35th St, Chicago, IL",Urban Air Quality and Health Education,"single node with PM. ?Ã­Ã§Upwind of highway for measuring ""Before"" air that moves in to Pilsen.",41.83038,-87.68486
+44,8D,"Cicero Ave. & Chicago Ave., Chicago, IL",Vision Zero - Pedestrian High Crash Intersection,,41.895,-87.74581
+90,48,"Damen Ave. & Webster, Chicago, IL",Public Health Air Quality Bloomberg Project,,41.9214,-87.67775
+35,4,"State St  & Jackson Blvd, Chicago, IL",Urban Vehicle and Pedestrian Flow,single node with PM,41.87821,-87.62761
+29,O38,"Damen Ave & Archer Ave, Chicago, IL",Urban Air Quality and Health Education,single node,41.83174,-87.67532
+32,O14,"State St  & Washington St, Chicago, IL",Urban Vehicle and Pedestrian Flow,single node,41.88321,-87.62777
+15,,"Lake Shore Drive & Monroe St, Chicago, IL",Urban Impact on Climate & Weather,,41.88093,-87.61944
+63,,"Broadway Ave. & Elmdale Ave., Chicago, IL",COMPASS Study,,41.99092,-87.66029
+2,09C,"State St  & Randolph St, Chicago, IL",Urban Impact on Climate & Weather,First node in E-W transect over different building forms (skyscraper to 2-flat),41.88451,-87.62795
+51,2A,"Jeffrey Ave. & 95th St., Chicago, IL",Vision Zero - Pedestrian High Crash Intersection,,41.72247,-87.57536
+18,00D,"Cornell Dr  & 47th St, Chicago, IL",Urban Impact on Climate & Weather,,41.81024,-87.59029
+36,,"State St  & Van Buren St, Chicago, IL",Urban Vehicle and Pedestrian Flow,single node,41.87694,-87.62756
+20,O40,"Lake Shore Drive  & 85th St, Chicago, IL",Urban Impact on Climate & Weather,,41.74109,-87.54018
+92,,"Kedzie Ave. & Lake St., Chicago, IL",Community Suggestion,,41.88435,-87.70622
+25,O53,"Racine Ave  & 18th St, Chicago, IL",Urban Air Quality and Health Education,single node with PM. ?Ã­Ã§Downwind of smelter at Loomis and 21st.,41.85799,-87.65652
+66,30,"Halsted St. & 34th St., Chicago, IL",COMPASS Study,,41.83281,-87.64615
+88,96,"Ave L & 100th, Chicago, IL",Public Health Air Quality Bloomberg Project,,41.71388,-87.53649
+52,80,"Broadway Ave. & Lawrence Ave., Chicago, IL",Vision Zero - Other High Crash Locations,,41.96902,-87.65967
+71,8F,"Clark St. & Montrose Ave., Chicago, IL",Studio Gang/BET Study,,41.96164,-87.66595
+106,71,"UChicago, Ratner",Array of Things (?),,41.79447,-87.60163
+96,07D,"Cottage Grove Ave. & 93rd St, Chicago, IL",Northwestern-CNT (Chatham Project),,41.72936,-87.60465
+49,20,"Western Ave. & 69th St., Chicago, IL",Vision Zero - Pedestrian High Crash Intersection,,41.76833,-87.68334
+54,6B,"Ashland Ave. & 59th St., Chicago, IL",Vision Zero - Other High Crash Locations,,41.78675,-87.66439
+100,54,"Western Ave. & Addison St., Chicago, IL",Lane of Things,,41.94673,-87.68826
+46,,"Fairbanks Ct. & Ontario St., Chicago, IL",Vision Zero - Pedestrian High Crash Intersection,,41.89341,-87.62028
+50,85,"Ashland Ave. & 79th St., Chicago, IL",Vision Zero - Pedestrian High Crash Intersection,,41.75036,-87.66344
+59,90,"Milwaukee Ave. & Belmont Ave, Chicago, IL",Vision Zero - Other High Crash Locations,,41.93913,-87.72392
+34,,"State St  & Adams St, Chicago, IL",Urban Vehicle and Pedestrian Flow,single node,41.87951,-87.62764
+87,95,"Ave O & 126th, Chicago, IL",Public Health Air Quality Bloomberg Project,,41.66611,-87.5393
+27,O4E,"Damen Ave  & Chicago Int'l Produce Mkt, Chicago, IL",Urban Air Quality and Health Education,,41.84534,-87.67786
+80,07B,"Ashland Ave. & Harrison, Chicago, IL",BRT,,41.8742,-87.6666
+9,03C,"Kedzie Ave  & 5th Ave, Chicago, IL",Urban Impact on Climate & Weather,,41.87838,-87.70823
+22,O25,"Western Ave  & 18th St, Chicago, IL",Urban Air Quality and Health Education,specific corner not yet determined,41.85722,-87.68583
+91,,"Clinton St. & Jackson Ave., Chicago, IL",Community Suggestion,,41.87803,-87.64107
+43,5D,"Pulaski Rd. & Chicago Ave., Chicago, IL",Vision Zero - Pedestrian High Crash Intersection,,41.89537,-87.72608
+58,08C,"Western Ave. & Fullterton Ave, Chicago, IL",Vision Zero - Other High Crash Locations,,41.9249,-87.68764
+16,OO6,"Lake Shore Drive  & 18th Dr, Chicago, IL",Urban Impact on Climate & Weather,,41.85818,-87.6162
+69,76,"Pulaski Rd. & 27th St., Chicago, IL",COMPASS Study,,41.84241,-87.7245
+101,0A4,"Western Ave. & Roscoe Ave., Chicago, IL",Lane of Things,,41.9431,-87.68815
+93,86,"Damen Ave. & Lawrence Ave., Chicago, IL",Community Suggestion,,41.96876,-87.67919
+38,O50,"Ashland Av  & Division St, Chicago, IL",Urban Placemaking,,41.90351,-87.66716
+10,O3F,"Pulaski Rd  & Madison St, Chicago, IL",Urban Impact on Climate & Weather,,41.88082,-87.72556
+78,09D,"Ashland Ave. & 31st Pl , Chicago, IL",BRT,,41.83871,-87.66578
+6,03D,"Halsted St & Randolph St, Chicago, IL",Urban Impact on Climate & Weather,,41.88458,-87.64736
+84,9,"Elston & Cortland St., Chicago, IL",North Branch Framework Project,,41.91719,-87.65828

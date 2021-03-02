@@ -1,0 +1,8 @@
+1.
+https://catalog.data.gov/dataset/beach-water-quality-automated-sensors-66a4b
+2.
+https://catalog.data.gov/dataset/array-of-things-locations
+3.
+https://data.world/indoagri/iot-temperature-dataset-of-2019
+4. 5.
+https://archive.ics.uci.edu/ml/datasets/Gas+sensors+for+home+activity+monitoring#
