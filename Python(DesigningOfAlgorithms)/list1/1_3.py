@@ -4,10 +4,17 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 G = nx.Graph()
+
+# Labels
 VV = [1, 2, 3, 4, 5]
+
+# Connections
 WW = [(1, 2), (2, 3), (3, 4), (4, 5), (1, 3), (3, 5)]
+
+# Coordinates
 Vx = {1: 0, 2: 1, 3: 2, 4: 3, 5: 4}
 Vy = {1: 0, 2: 1, 3: 0, 4: -1, 5: 0}
+
 g = nx.Graph()
 gpos = {}
 for v in VV:
