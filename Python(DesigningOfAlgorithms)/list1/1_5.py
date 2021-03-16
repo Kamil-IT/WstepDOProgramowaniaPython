@@ -32,6 +32,9 @@ for pos_index in range(len(pos_key)):
 nx.set_node_attributes(G, pos, 'coord')
 nx.draw_networkx_nodes(G, pos, node_size=200)
 nx.draw_networkx_labels(G, pos, font_size=10)
+
+# uncomment to enable connections with edges
 # nx.draw_networkx_edges(G, pos)
+
 
 plt.show()
