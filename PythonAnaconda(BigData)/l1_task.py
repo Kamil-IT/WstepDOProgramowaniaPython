@@ -8,6 +8,7 @@ fs = 3
 t = linspace(-1, 1, randint(10, 1200))
 y = sin(t)
 ts = array([uniform(-1, 1) for i in range(fs + fs + 1)])
+ts.sort()
 num_coeffs = len(ts)
 sm = 0
 
