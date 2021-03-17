@@ -1,0 +1,39 @@
+MODEL:
+SETS:
+   WAREHOUSE                     : CAPACITY;
+   CUSTOMER                      : DEMAND;
+   ROUTES( WAREHOUSE, CUSTOMER)  : COST, VOLUME;
+   VEHICLE( WAREHOUSE, CUSTOMER) : USAGE;
+ENDSETS
+
+! The objective;
+ [OBJ] MAX = @SUM( CUSTOMER: DEMAND * PRICE ) - @SUM( ROUTES: COST * VOLUME) - @SUM(VEHICLE: USAGE * VEH_COST_USAGE);
+
+! The demand constraints;
+ @FOR( CUSTOMER( J): [DEM]
+  @SUM( WAREHOUSE( I): VOLUME( I, J)) >=
+   DEMAND( J));
+
+! The supply constraints;
+ @FOR( WAREHOUSE( I): [SUP]
+  @SUM( CUSTOMER( J): VOLUME( I, J)) >=
+   CAPACITY( I));
+
+ @FOR( WAREHOUSE( I):
+  @FOR( CUSTOMER( J):
+   USAGE( I, J) * VEH_CAPACITY >= VOLUME( I, J)));
+
+! Here are the parameters;
+DATA:
+   CAPACITY =   25, 43, 31 ;
+   DEMAND =   50, 15, 12, 22;
+   COST =      6,  2,  6,  7,
+               4,  9,  5,  3,
+               8,  8,  1,  5;
+
+   VEH_COST_USAGE = 10;
+   VEH_CAPACITY   = 15;
+
+   PRICE = 10;
+ENDDATA
+END
