@@ -10,7 +10,7 @@ graph_element_number = 20
 # Find position for edges
 pos = {}
 failed_found_number = 0
-while (failed_found_number < 100 and len(pos) < graph_element_number):
+while failed_found_number < 100 and len(pos) < graph_element_number:
     location = (randint(0, graph_width), randint(0, graph_length))
     if location in pos.values():
         failed_found_number += 1
@@ -19,7 +19,7 @@ while (failed_found_number < 100 and len(pos) < graph_element_number):
         pos[location_name] = location
 
 if failed_found_number == 100:
-    print("I cant generate good graph for you because I guessed to 100 times wrong")
+    print("I cant generate good graph for you because I guessed 100 times wrong")
 
 G = nx.Graph()
 
