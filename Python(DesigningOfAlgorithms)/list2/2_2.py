@@ -85,8 +85,3 @@ for label_key in full_labels.keys():
     nx.draw_networkx_edge_labels(G, pos_show, edge_labels=labels)
     plt.show()
     plt.pause(1)
-
-# uncomment to enable connections with edges
-# nx.draw_networkx_edges(G, pos)
-
-# plt.show()
