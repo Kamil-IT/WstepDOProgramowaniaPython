@@ -43,7 +43,7 @@ def to_string_all_element_robots(robots):
 def generate_random_robot(id_start):
     robot = Robot(id_start,
                   random.choice(['AUV', 'AFV', 'AGV']),
-                  random.randint(50, 2000),
+                  random.choice([120, 200, 300, 500, 700]),
                   random.randint(1, 1000),
                   random.randint(1, 30))
     id_start += 1
@@ -96,9 +96,7 @@ def convert_json_el_to_robot(json):
         int(json["resolution"]),
     )
 
-
-
-robots = generate_random_robots(5)
-print_all_robots(robots)
-save_robots(robots)
-print_all_robots(read_robots())
+# robots = generate_random_robots(5)
+# print_all_robots(robots)
+# save_robots(robots)
+# print_all_robots(read_robots())
