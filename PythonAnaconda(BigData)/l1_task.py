@@ -17,6 +17,7 @@ sm = 0
 for k in range(-num_coeffs, num_coeffs):
     sm += sin(2 * pi * (k / fs)) * sinc(k - fs * t)
 
+
 # plot
 plot(t, sm, '--', t, sin(2 * pi * t), ts, sin(2 * pi * ts), 'o')
 # plot(t, abs(sm - sin(2 * pi * t)))
