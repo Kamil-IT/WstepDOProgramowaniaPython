@@ -37,7 +37,7 @@ G_plane = nx.Graph()
 pos_plane = {}
 for i in range(0, N):
     for j in range(0, K):
-        label = 'p' + str(i) + str(j)
+        label = 'number' + str(i) + str(j)
         G_plane.add_node(label)
         pos_plane[label] = (i, j)
 
