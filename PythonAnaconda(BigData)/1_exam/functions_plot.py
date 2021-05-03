@@ -11,6 +11,11 @@ N = 1000
 t = np.sort(np.random.uniform(0, 10, N))
 # sampling(losowanie próbek) N times on same distance
 t_same_distance = np.linspace(0, 10, N)
+# random sampling and indexing
+indexes = np.random.choice(N, 100, replace=False)
+indexes.sort()
+t_different_distance = t[indexes]
+y_sin_different_distance = np.sin(np.pi * t)[indexes]
 
 # Sin from samples
 sin = np.sin(5 * np.pi * t)
