@@ -35,7 +35,7 @@ plt.subplot(211)
 plt.plot(x, y, '*')
 plt.plot(x, y_est1, 'g-', label='l1 norm')
 plt.plot(x, y_est2, 'r-', label='l2 norm')
-plt.plot(x, yy, 'check_quantity-', label='prosta')
+plt.plot(x, yy, 'b-', label='prosta')
 plt.legend()
 
 y2 = y.copy()
@@ -49,7 +49,7 @@ y_est11 = xopt11[1] + xopt11[0] * x
 y_est22 = xopt22[1] + xopt22[0] * x
 
 plt.subplot(212)
-plt.plot(x, yy, 'check_quantity', label='prosta')
+plt.plot(x, yy, 'b--', label='prosta')
 plt.plot(x, y_est11, 'g--', label='l1 norm')
 plt.plot(x, y_est22, 'r--', label='l2 norm')
 plt.ylim([-5, 16])
@@ -67,7 +67,7 @@ y_est222 = xopt222[1] + xopt222[0] * x
 y_est000 = xopt000[1] + xopt000[0] * x
 
 plt.subplot(212)
-plt.plot(x, yy, 'check_quantity', label='prosta')
+plt.plot(x, yy, 'y--', label='prosta')
 plt.plot(x, y_est111, 'g--', label='l1 norm')
 plt.plot(x, y_est222, 'r--', label='l2 norm')
 plt.plot(x, y_est000, 'b--', label='l0 norm')

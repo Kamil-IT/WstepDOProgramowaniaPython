@@ -17,16 +17,6 @@ sawtooth_frequencies_welch, sawtooth_power_welch = signal.welch(sawtooth)
 square_frequencies_welch, square_power_welch = signal.welch(square)
 
 
-# plt.subplot(311)
-# plt.semilogy(t, sin, 'y-')
-#
-# plt.subplot(312)
-# plt.semilogy(t, sawtooth, 'y-')
-#
-# plt.subplot(313)
-# plt.semilogy(t, square, 'y-')
-
-
 plt.subplot(611)
 plt.semilogy(sin_frequencies, sin_power, 'y-')
 
