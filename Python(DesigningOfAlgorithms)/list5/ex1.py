@@ -5,7 +5,6 @@ def get_len_of_biggest_number(numbers):
             max_len = len(number)
     return max_len
 
-
 def sort(numbers, sorted_numbers, possition_number, max_index_number):
     max_number = []
     if possition_number == get_len_of_biggest_number(numbers) - 1:

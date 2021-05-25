@@ -74,7 +74,7 @@ def binary_search_robot_indexs(robots, search_values):
 
 # Prepare to search
 robots = robot4_0.generate_random_robots(10)
-robots.sort(key=lambda robot: robot._mass)
+robots.quick_sort(key=lambda robot: robot._mass)
 robot4_0.print_all_robots(robots)
 
 # Search id max

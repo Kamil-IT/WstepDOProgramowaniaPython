@@ -28,7 +28,7 @@ def binary_search_robot_indexs(array, search_values):
 
 
 robots = robot4_0.generate_random_robots(10)
-robots.sort(key=lambda robot: robot._mass)
+robots.quick_sort(key=lambda robot: robot._mass)
 robot4_0.print_all_robots(robots)
 
 robots_id_mass = list(map(lambda robot: (robot._id, robot._mass), robots))
