@@ -137,6 +137,9 @@ print('road to 33')
 search(bst, 33)
 [i.display() for i in way[:4]]
 
+print(f'max {max(nodes)}')
+print(f'min {min(nodes)}')
+
 print('IN order: ', bst.depthFirstSearch_INorder())
 print()
 print('PRE order:', bst.depthFirstSearch_PREorder())

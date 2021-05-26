@@ -4,7 +4,7 @@ import networkx as nx
 from matplotlib import pyplot as plt
 
 
-# odwiedzamy wszystkich sąsiadów
+# odwiedzamy wszystkich sąsiadów /przeszukiwanie w szerz
 class GraphBFS:
 
     def __init__(self):
