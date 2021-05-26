@@ -1,8 +1,8 @@
-import string
 import random
+import string
 
 
-class binarySearchTree: #1
+class binarySearchTree:
     def __init__(self, val=None):
         self.val = val
         self.left = None
@@ -16,18 +16,18 @@ class binarySearchTree: #1
         else:
 
             if val == self.val:
-                return 'no duplicates allowed in binary search tree' #4
+                return 'no duplicates allowed in binary search tree'  # 4
 
             if (val < self.val):
 
-                if(self.left):
+                if (self.left):
                     self.left.insert(val)
 
                 else:
                     self.left = binarySearchTree(val)
 
             else:
-                if(self.right):
+                if (self.right):
                     self.right.insert(val)
                 else:
                     self.right = binarySearchTree(val)
@@ -43,12 +43,12 @@ class binarySearchTree: #1
         bfs_list = []
         queue = []
         queue.insert(0, currentNode)
-        while(len(queue) > 0):
+        while (len(queue) > 0):
             currentNode = queue.pop()
             bfs_list.append(currentNode.val)
-            if(currentNode.left):
+            if (currentNode.left):
                 queue.insert(0, currentNode.left)
-            if(currentNode.right):
+            if (currentNode.right):
                 queue.insert(0, currentNode.right)
 
         return bfs_list
@@ -103,7 +103,7 @@ class binarySearchTree: #1
 
     def delete(self, val):
 
-        if(self.findNodeAndItsParent(val) == 'Not found'):
+        if (self.findNodeAndItsParent(val) == 'Not found'):
             return 'Node is not in tree'
 
         deleteing_node, parent_node = self.findNodeAndItsParent(val)
@@ -144,13 +144,14 @@ class binarySearchTree: #1
 
         return 'Successfully deleted'
 
-    def display(self): # 3
+    def display(self):
         lines, *_ = self._display_aux()
         for line in lines:
             print(line)
 
     def _display_aux(self):
-
+        """Returns list of strings, width, height, and horizontal coordinate of the root."""
+        # No child.
         if self.right is None and self.left is None:
             line = '%s' % self.val
             width = len(line)
@@ -158,6 +159,7 @@ class binarySearchTree: #1
             middle = width // 2
             return [line], width, height, middle
 
+        # Only left child.
         if self.right is None:
             lines, n, p, x = self.left._display_aux()
             s = '%s' % self.val
@@ -167,6 +169,7 @@ class binarySearchTree: #1
             shifted_lines = [line + u * ' ' for line in lines]
             return [first_line, second_line] + shifted_lines, n + u, p + 2, n + u // 2
 
+        # Only right child.
         if self.left is None:
             lines, n, p, x = self.right._display_aux()
             s = '%s' % self.val
@@ -176,28 +179,26 @@ class binarySearchTree: #1
             shifted_lines = [u * ' ' + line for line in lines]
             return [first_line, second_line] + shifted_lines, n + u, p + 2, u // 2
 
+        # Two children.
         left, n, p, x = self.left._display_aux()
         right, m, q, y = self.right._display_aux()
         s = '%s' % self.val
         u = len(s)
-        first_line = (x + 1) * ' ' + (n - x - 1) * \
-            '' + s + y * '' + (m - y) * ' '
-        second_line = x * ' ' + '/' + \
-            (n - x - 1 + u + y) * ' ' + '\\' + (m - y - 1) * ' '
+        first_line = (x + 1) * ' ' + (n - x - 1) * '_' + s + y * '_' + (m - y) * ' '
+        second_line = x * ' ' + '/' + (n - x - 1 + u + y) * ' ' + '\\' + (m - y - 1) * ' '
         if p < q:
             left += [n * ' '] * (q - p)
         elif q < p:
             right += [m * ' '] * (p - q)
         zipped_lines = zip(left, right)
-        lines = [first_line, second_line] + \
-            [a + u * ' ' + b for a, b in zipped_lines]
+        lines = [first_line, second_line] + [a + u * ' ' + b for a, b in zipped_lines]
         return lines, n + m + u, max(p, q) + 2, n + u // 2
 
-    def if_bst(self): #2
+    def if_bst(self):  # 2
         indicator = 1
         node_list = self.depthFirstSearch_INorder()
-        for i in range(0, len(node_list)-2):
-            if node_list[i] > node_list[i+1]:
+        for i in range(0, len(node_list) - 2):
+            if node_list[i] > node_list[i + 1]:
                 indicator = 0
                 self.delete(node_list[i])
                 self.insert(node_list[i])
@@ -211,10 +212,10 @@ def array_to_bst(array_nums):
     array_nums.sort()
     if not array_nums:
         return None
-    mid_num = len(array_nums)//2
+    mid_num = len(array_nums) // 2
     node = binarySearchTree(array_nums[mid_num])
     node.left = array_to_bst(array_nums[:mid_num])
-    node.right = array_to_bst(array_nums[mid_num+1:])
+    node.right = array_to_bst(array_nums[mid_num + 1:])
     return node
 
 

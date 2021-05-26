@@ -122,20 +122,20 @@ bst.display()
 bst.delete(530)
 print('delete 530')
 bst.display()
-
+print('add 33')
 bst.insert(33)
 bst.display()
 
-bst.delete(648)
-print('delete 648')
+bst.delete(1709)
+print('delete 1709')
 bst.display()
 print('\n')
 print(nodes)
 
 
-print('road to gold')
-search(bst, 928)
-print(way[0].display())
+print('road to 33')
+search(bst, 33)
+[i.display() for i in way[:4]]
 
 print('IN order: ', bst.depthFirstSearch_INorder())
 print()
