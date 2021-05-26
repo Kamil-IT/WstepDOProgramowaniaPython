@@ -23,7 +23,7 @@ class Node:
             return {str(self.left.val): self.left.to_dictionary()}
             # return f'[{str(self.val)}: self.left.to_dictionary()]'
         return {str(self.left.val): self.left.to_dictionary(), str(self.right.val): self.right.to_dictionary()}
-        return f'[{str(self.val)}: [{self.left.to_dictionary()},{self.right.to_dictionary()}]]'
+        # return f'[{str(self.val)}: [{self.left.to_dictionary()},{self.right.to_dictionary()}]]'
 
 
 def insert(root, key):

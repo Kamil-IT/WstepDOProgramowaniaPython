@@ -2,7 +2,7 @@ from main import *
 random.seed(12)
 
 
-class BSTNode: #2
+class BSTNode:
     def __init__(self, val=None):
         self.left = None
         self.right = None
@@ -113,10 +113,8 @@ def get_params(r_list, p):
 
 
 robots = multiple_robots(10)
-show_robots(robots)
-print('\n')
-param = int(
-    input('Wybierz parametr: 1 - masa, 2 - zasięg, 3 - rozdzielczość: \n'))
+
+param = int(input('masa/zasięg/rozdzielczość: [1,2,3]: '))
 nodes = get_params(robots, param)
 print(nodes, '\n')
 bst = array_to_bst(nodes) # 1
@@ -136,8 +134,8 @@ print(nodes)
 
 
 print('road to gold')
-print(search(bst, 928))
-print(way)
+search(bst, 928)
+print(way[0].display())
 
 print('IN order: ', bst.depthFirstSearch_INorder())
 print()

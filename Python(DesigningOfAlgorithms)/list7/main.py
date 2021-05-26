@@ -268,8 +268,7 @@ def multiple_robots(M):
 
 def show_robots(vector):
     for i in range(len(vector)):
-        print(vector[i].identyfikator, vector[i].typ,
-              vector[i].masa, vector[i].zasieg, vector[i].rozdzielczosc)
+        print(vector[i].typ, vector[i].masa, vector[i].zasieg, vector[i].rozdzielczosc)
 
 
 def get_masa(vec):
