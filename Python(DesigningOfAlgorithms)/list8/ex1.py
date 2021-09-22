@@ -78,5 +78,5 @@ else:
 
 for method in range(1, 4):
     print(print_methods(V, G, is_directed, method))
-print('Najszybsza droga: ' + str(shortest_path(V, G, is_directed, 2, 1)))
+print('Najszybsza droga 2-1: ' + str(shortest_path(V, G, is_directed, 2, 1)))
 print(connectivity(V, G))

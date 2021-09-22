@@ -315,13 +315,14 @@ class RedBlackTree():
 
 
 bst = RedBlackTree()
-for i in [12, 14, 75, 15, 98, 48]:
+for i in [12, 14, 17, 13, 98, 17]:
     bst.insert(i)
 
 bst.print_tree()
 
-print("After deleting 14")
+print("deleting 14")
 bst.delete_node(14)
 bst.print_tree()
+print("inset 77")
 bst.insert(77)
 bst.print_tree()
