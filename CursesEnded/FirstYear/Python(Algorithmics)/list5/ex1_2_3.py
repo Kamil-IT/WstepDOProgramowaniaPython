@@ -49,7 +49,7 @@ class Stack:
         if self.empty():
             raise ValueError('Empty stack')
         node = self.head
-        node_data = node.data
+        node_data = node.train_data
         if self.head.next is None:  # self.length == 1
             self.head = None
         else:

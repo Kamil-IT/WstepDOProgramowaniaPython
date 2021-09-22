@@ -1,5 +1,3 @@
-from time import sleep
-
 from matplotlib import pyplot as plt
 
 import robot4_0

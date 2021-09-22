@@ -5,7 +5,7 @@ import pytz
 from flask import Flask, request
 
 app = Flask(__name__)
-path = "/SecondYearDoneCurses/PythonJava(InternetOfThings)/list1/python/times"
+path = "/SecondYear/PythonJava(InternetOfThings)/list1/python/times"
 os.chdir(path)
 
 

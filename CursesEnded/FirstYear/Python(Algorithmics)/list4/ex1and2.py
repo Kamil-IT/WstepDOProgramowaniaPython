@@ -50,9 +50,9 @@ def leaf_to_root(top, leaf_n):
     Q.put(top)
     while not Q.empty():
         node = Q.get()
-        if node.left.data == leaf_n:
+        if node.left.train_data == leaf_n:
             return node.left
-        if node.right.data == leaf_n:
+        if node.right.train_data == leaf_n:
             return node.right
         if node.left:
             Q.put(node.left)
