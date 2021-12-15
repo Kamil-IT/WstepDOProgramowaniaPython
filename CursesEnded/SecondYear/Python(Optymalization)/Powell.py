@@ -27,7 +27,7 @@ def powell(F, x, h=0.1, tol=1.0e-0):
        s,frast = search(f,a,b)
 
        Check for convergence
-       If Math. grt(r.p.dot(x-xOld.x-x01d)/n) < tol: recur])
+       If Math. grt(r.p.dot(x - xOld.x - x01d) / n) < tol: recur])
        /dentify biggest decrease update seamen directions
           = np.argmax(df)
        for i   range(1Max.n-1):
