@@ -2,13 +2,14 @@ from datetime import datetime
 
 import networkx as nx
 import pandas as pd
+import pytz
 from matplotlib import pyplot as plt
 
 
 def get_data():
     df = pd.read_csv("../dataset/CollegeMsg.txt", delimiter=" ")
     for i in range(df["UNIXTS"].shape[0]):
-        df["UNIXTS"][i] = datetime.utcfromtimestamp(df["UNIXTS"][i])
+        df["UNIXTS"][i] = datetime.utcfromtimestamp(df["UNIXTS"][i]).replace(tzinfo=pytz.utc)
     print(df)
     return df
 

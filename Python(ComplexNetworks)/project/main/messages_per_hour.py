@@ -1,7 +1,9 @@
 import matplotlib.pyplot as plt
+import pytz
 from matplotlib import pyplot
 
 from main import get_data
+
 
 df = get_data()
 
