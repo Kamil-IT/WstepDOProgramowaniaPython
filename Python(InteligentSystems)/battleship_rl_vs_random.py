@@ -99,5 +99,7 @@ dqn.compile(Adam(learning_rate=1e-3), metrics=['mae'])
 dqn.fit(env, nb_steps=200, visualize=False, verbose=1)
 
 scores = dqn.test(env, nb_episodes=100, visualize=False)
+
+# print score
 print(f"RL: {np.mean(scores.history['episode_reward'])}")
 print(f"Random: {random_score}")
