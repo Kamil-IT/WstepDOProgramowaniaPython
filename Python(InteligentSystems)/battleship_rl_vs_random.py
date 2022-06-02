@@ -5,7 +5,6 @@ import numpy as np
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense, Flatten, IntegerLookup, Layer
 from tensorflow.keras.optimizers import Adam
-from tf_agents.agents.dqn import dqn_agent
 from rl.agents import DQNAgent, NAFAgent, CEMAgent, SARSAAgent
 from rl.policy import BoltzmannQPolicy
 from rl.memory import SequentialMemory, EpisodeParameterMemory
