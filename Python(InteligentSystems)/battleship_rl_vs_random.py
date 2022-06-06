@@ -2,8 +2,10 @@ import random
 
 import gym
 import numpy as np
-from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import Dense, Flatten, IntegerLookup, Layer
+import matplotlib.pyplot as plt
+from tensorflow.keras.models import Sequential, Model
+from tensorflow.keras import Model
+from tensorflow.keras.layers import Dense, Flatten, IntegerLookup, Layer, Input
 from tensorflow.keras.optimizers import Adam
 from rl.agents import DQNAgent, NAFAgent, CEMAgent, SARSAAgent
 from rl.policy import BoltzmannQPolicy
@@ -64,12 +66,11 @@ def build_model_sequential(states, actions):
 def build_model_neuron(states, actions):
     model = Sequential()
     model.add(Flatten(input_shape=(1, 2, 10, 10)))
-    # model.add(Dense(24, activation='relu'))
-    # model.add(Dense(24, activation='relu'))
-    # model.add(Dense(1024, activation='relu'))
-    # model.add(Dense(512, activation='relu'))
     model.add(Dense(24, activation='relu'))
-    model.add(Dense(24, activation='relu'))
+    model.add(Dense(512, activation='relu'))
+    model.add(Dense(1024, activation='relu'))
+    model.add(Dense(1024 * 2, activation='relu'))
+    # model.add(Dense(1024 * 4, activation='relu'))
     model.add(Dense(actions, activation='linear'))
     return model
 
@@ -81,9 +82,9 @@ def build_agent_DQN(model, actions):
     return dqn
 
 def train_show_results(name, agent):
-    agent.fit(env, nb_steps=200, visualize=False, verbose=1)
-    scores = agent.test(env, nb_episodes=100, visualize=False)
-    return f"{name}: {np.mean(scores.history['episode_reward'])}"
+    agent.fit(env, nb_steps=200, visualize=False, verbose=1, nb_max_start_steps=100)
+    scores = agent.test(env, nb_episodes=100, visualize=False, nb_max_start_steps=100)
+    return [name, np.mean(scores.history['episode_reward'])]
 
 # Build env
 # https://github.com/thomashirtz/gym-battleship
@@ -105,7 +106,7 @@ random_choice = random_game()
 max_random_choice = sum(random_choice)
 random_chances = [i / max_random_choice for i in random_choice]
 random_score = simulate_game(random_chances)
-results.append(f'random score: {random_score}')
+results.append(['random score', random_score])
 
 
 def neuron_simulation(model, actions, results):
@@ -164,3 +165,11 @@ sequential_simulation(model_neuron, ACTION_SPACE, results)
 
 # print score
 print(results)
+
+
+# fig = plt.figure()
+# ax = fig.add_axes([0,0,1,1])
+# names = [results[0] for i in results]
+# values = [results[1] for i in results]
+# ax.bar(names, values)
+# plt.show()
