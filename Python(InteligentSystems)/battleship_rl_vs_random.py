@@ -3,12 +3,13 @@ import random
 import gym
 import numpy as np
 import matplotlib.pyplot as plt
+from gym_battleship import BattleshipEnv
 from tensorflow.keras.models import Sequential, Model
 from tensorflow.keras import Model
 from tensorflow.keras.layers import Dense, Flatten, IntegerLookup, Layer, Input
 from tensorflow.keras.optimizers import Adam
 from rl.agents import DQNAgent, NAFAgent, CEMAgent, SARSAAgent
-from rl.policy import BoltzmannQPolicy
+from rl.policy import BoltzmannQPolicy, SoftmaxPolicy, BoltzmannGumbelQPolicy, MaxBoltzmannQPolicy, EpsGreedyQPolicy
 from rl.memory import SequentialMemory, EpisodeParameterMemory
 import gym_battleship
 
@@ -82,20 +83,14 @@ def build_agent_DQN(model, actions):
     return dqn
 
 def train_show_results(name, agent):
-    agent.fit(env, nb_steps=200, visualize=False, verbose=1, nb_max_start_steps=100)
-    scores = agent.test(env, nb_episodes=100, visualize=False, nb_max_start_steps=100)
+    # If done == true end episode
+    agent.fit(env, nb_steps=200, visualize=False, verbose=1, nb_max_start_steps=10, nb_max_episode_steps=200)
+    scores = agent.test(env, nb_episodes=200, visualize=False, nb_max_start_steps=10)
     return [name, np.mean(scores.history['episode_reward'])]
 
 # Build env
 # https://github.com/thomashirtz/gym-battleship
-env = gym.make('Battleship-v0',
-               reward_dictionary={
-                   'win': 0,
-                   'missed': 0,
-                   'touched': -10, # hitted
-                   'repeat_missed': 5,
-                   'repeat_touched': -30
-               })
+env = BattleshipEnv()
 OBSERVATION_SPACE = env.observation_space.shape[0]
 ACTION_SPACE = env.action_space.n
 
@@ -112,14 +107,14 @@ results.append(['random score', random_score])
 def neuron_simulation(model, actions, results):
     policy = BoltzmannQPolicy()
     memory = SequentialMemory(limit=50000, window_length=1)
-    dqn = DQNAgent(model=model, memory=memory, policy=policy,
+    dqn = DQNAgent(model=model, memory=memory, policy=policy, test_policy=policy,
                    nb_actions=actions, nb_steps_warmup=10, target_model_update=1e-2)
-    naf = SARSAAgent(model=model, policy=policy,
+    naf = SARSAAgent(model=model, policy=policy, test_policy=policy,
                    nb_actions=actions, nb_steps_warmup=10)
 
     memory_CEM = EpisodeParameterMemory(limit=1000, window_length=1)
-    cema = CEMAgent(model=model, memory=memory_CEM,
-                   nb_actions=actions, nb_steps_warmup=10)
+    # cema = CEMAgent(model=model, memory=memory_CEM,
+    #                nb_actions=actions, nb_steps_warmup=10)
 
 
     dqn.compile(optimizer=Adam(learning_rate=1e-3))
@@ -128,8 +123,8 @@ def neuron_simulation(model, actions, results):
     naf.compile(optimizer=Adam(learning_rate=1e-3))
     results.append(train_show_results('RL-neuron-NAFAgent ', naf))
 
-    cema.compile()
-    results.append(train_show_results('RL-neuron-cema_agent', cema))
+    # cema.compile()
+    # results.append(train_show_results('RL-neuron-cema_agent', cema))
 
 
 def sequential_simulation(model, actions, results):
@@ -151,8 +146,8 @@ def sequential_simulation(model, actions, results):
     naf.compile(optimizer=Adam(learning_rate=1e-3))
     results.append(train_show_results('RL-sequential-NAFAgent ', naf))
 
-    cema.compile()
-    results.append(train_show_results('RL-sequential-cema_agent', cema))
+    # cema.compile()
+    # results.append(train_show_results('RL-sequential-cema_agent', cema))
 
 
 # Nauron simulation
